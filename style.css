@@ -1,4 +1,143 @@
-.menu{
-    display: flex;
-    background-color: black;
+/* 📌 General */
+body {
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+/* 📌 Menú fix a dalt */
+.menu-principal {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.menu-principal ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.menu-principal a {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem;
+}
+
+.menu-principal a:hover {
+  border-bottom: 2px solid black;
+}
+
+/* 🖼️ Capçalera */
+.capcalera {
+  position: relative;
+}
+
+.capcalera img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.text-sobre-imatge {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  color: white;
+}
+
+/* 👥 Sobre nosaltres */
+.sobre-nosaltres .img-ronda {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 200px;
+}
+
+/* 🍽️ Carta amb grid */
+.grid-carta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  text-align: center;
+}
+
+.img-container {
+  position: relative;
+}
+
+.img-container img {
+  width: 100%;
+}
+
+.img-container span {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.3rem;
+}
+
+/* 🖼️ Galeria amb flex */
+.galeria-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.galeria-flex img {
+  width: 150px;
+  border: 3px solid #ccc;
+  transition: all 0.3s;
+}
+
+.galeria-flex img:hover {
+  border-color: #333;
+  filter: brightness(70%);
+}
+
+.galeria-flex img.fosca {
+  filter: brightness(70%);
+}
+
+/* 📅 Formulari */
+.reserva form {
+  display: grid;
+  gap: 1rem;
+  max-width: 600px;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* 📍 Botó reserva fix */
+.boto-reserva {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+/* 👣 Footer */
+.footer {
+  background-color: #eee;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.material-icons {
+  vertical-align: middle;
+  margin-right: 0.5rem;
 }
