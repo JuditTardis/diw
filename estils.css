@@ -388,3 +388,55 @@ body {
   }
 
 }
+
+/* 🔧 Adaptació per tablets (≤768px) */
+@media (max-width: 48rem) { /* 768px = 48rem */
+
+  .menu-principal ul {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .contenidor-nosaltres {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .menu-left {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+
+  .contingut {
+    grid-column: 1 / -1;
+  }
+
+  .reserva form {
+    grid-template-columns: 1fr;
+  }
+
+  .reserva button {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-logo {
+    display: none;
+  }
+
+  .footer-contacte {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
