@@ -1,81 +1,117 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Restaurant Els Coberts</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="estils.css" />
+ <link rel="icon" type="image/png" href="imatges/restaurant.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-  <!-- 🧭 Capçalera -->
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#nosaltres">Nosaltres</a></li>
-        <li><a href="#carta">Carta</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-      </ul>
-    </nav>
-    <div class="banner">
-      <h1>Restaurant els coberts</h1>
+
+  <!-- 🔝 Menú fix a dalt -->
+  <nav class="menu-principal">
+    <ul>
+      <li><a href="#nosaltres">Nosaltres</a></li>
+      <li><a href="#carta">Carta</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+    </ul>
+  </nav>
+
+  <!-- 🖼️ Capçalera amb imatge -->
+  <header class="capcalera">
+    <img src="imatges\capçalera.jpg" alt="Restaurant" />
+    <div class="text-sobre-imatge">
+      <h1>Restaurant <strong>Els Coberts</strong></h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
     </div>
   </header>
 
-  <!-- 👥 Secció sobre nosaltres -->
-  <section id="nosaltres">
-    <h2>Sobre nosaltres</h2>
-    <div class="info-nosaltres">
-      <img src="imatge1.jpg" alt="Sobre nosaltres">
+  <!-- 👥 Sobre nosaltres -->
+ <section id="nosaltres" class="sobre-nosaltres">
+  <h2>Sobre nosaltres</h2>
+  <div class="fila-nosaltres">
+    <div class="contenidor-nosaltres">
+      <img src="imatges/aboutus1.jpg" alt="interior" class="img-ronda" />
       <p>Lorem ipsum dolor sit amet...</p>
     </div>
-  </section>
 
-  <!-- 🍽️ Carta -->
-  <section id="carta">
-    <h2>Carta</h2>
-    <div class="menus">
-      <article>
-        <h3>Menú 1</h3>
-        <p>Contingut...</p>
-        <img src="pasta.jpg" alt="Pasta">
-        <img src="entrants.jpg" alt="Entrants">
-      </article>
-      <article>
-        <h3>Menú 2</h3>
-        <p>Contingut...</p>
-        <img src="amanida.jpg" alt="Amanida">
-        <img src="peix.jpg" alt="Peix">
-      </article>
+    <div class="contenidor-nosaltres">
+      <img src="imatges/aboutus2.jpg" alt="cuina" class="img-ronda" />
+      <p>Lorem ipsum dolor sit amet...</p>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- 🍽️ Carta -->
+<section id="carta" class="carta">
+  <h2>Carta</h2>
+  <div class="menu-title">Menú</div>
+
+  <!-- Menú 1 -->
+  <div class="menu-grid">
+    <div class="menu-left">Menú 1</div>
+    <div class="contingut">
+      <h3>Contingut</h3>
+      <p>Descripció del menú 1...</p>
+    </div>
+    <div class="img-container"><img src="imatges/pasta.jpg" alt="Pasta"><span>Pasta</span></div>
+    <div class="img-container"><img src="imatges/entrants.jpg" alt="Entrants"><span>Entrants</span></div>
+  </div>
+
+  <!-- Menú 2 -->
+  <div class="menu-grid">
+    <div class="menu-left">Menú 2</div>
+    <div class="contingut">
+      <h3>Contingut</h3>
+      <p>Descripció del menú 2...</p>
+    </div>
+    <div class="img-container"><img src="imatges/ensalada.jpg" alt="Amanida"><span>Amanida</span></div>
+    <div class="img-container"><img src="imatges/peix.jpg" alt="Peix"><span>Peix</span></div>
+  </div>
+</section>
 
   <!-- 🖼️ Galeria -->
-  <section id="galeria">
-    <h2>Galeria d’imatges</h2>
-    <div class="galeria">
-      <!-- 8 imatges -->
-      <img src="foto1.jpg" alt="Imatge 1">
-      <!-- ... -->
-    </div>
-  </section>
+<section class="galeria">
+  <h2>Galeria de Fotos</h2>
+  <div class="galeria-container">
+    <img src="imatges/restaurant 1.jpg" alt="Foto 1">
+    <img src="imatges/restaurant 2.jpg" alt="Foto 2">
+    <img src="imatges/restaurant 3.jpg" alt="Foto 3">
+    <img src="imatges/restaurant 4.jpg" alt="Foto 4">
+    <img src="imatges/restaurant 5.jpg" alt="Foto 5">
+    <img src="imatges/restaurant 6.jpg" alt="Foto 6">
+    <img src="imatges/restaurant 7.jpg" alt="Foto 7">
+    <img src="imatges/restaurant 8.jpg" alt="Foto 8">
+  </div>
+</section>
 
-  <!-- 📅 Reserva -->
-  <section id="reserva">
+  <!-- 📅 Formulari de reserva -->
+  <section id="reserva" class="reserva">
     <h2>Reserva</h2>
     <form>
-      <input type="text" name="nom" placeholder="Nom">
-      <input type="number" name="persones" placeholder="Número de persones">
-      <input type="date" name="data">
-      <input type="time" name="hora">
+      <input type="text" name="nom" placeholder="Nom" required />
+      <input type="number" name="persones" placeholder="Número de persones" required />
+      <input type="date" name="data" required />
+      <input type="time" name="hora" required />
       <textarea name="descripcio" placeholder="Descripció"></textarea>
       <button type="submit">Reservar</button>
     </form>
   </section>
 
-  <!-- 📞 Peu de pàgina -->
-  <footer>
-    <p>exemple@exemple.com - 999999999</p>
-  </footer>
+  <!-- 📍 Botó fix de reserva -->
+  <a href="#reserva" class="boto-reserva">Reservar</a>
+
+  <!-- 👣 Peu de pàgina -->
+  <footer class="footer">
+  <div class="footer-logo">
+    <img src="imatges/restaurant.png" alt="Logo" />
+  </div>
+  <div class="footer-contacte">
+    <p><span class="material-icons">email</span> exemple@exemple.com</p>
+    <p><span class="material-icons">call</span> 999999999</p>
+  </div>
+</footer>
 </body>
 </html>

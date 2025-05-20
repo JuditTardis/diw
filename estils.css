@@ -1,0 +1,306 @@
+/* 📌 General */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  font-size: 1rem;
+  background-color: bisque;
+}
+
+/* 📌 Menú fix a dalt */
+.menu-principal {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  background-color: rgb(1, 1, 1);
+  justify-content: right;
+  z-index: 1000;
+}
+
+.menu-principal ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.menu-principal a {
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem;
+}
+
+.menu-principal a:hover {
+  text-decoration: underline;
+}
+
+/* 🖼️ Capçalera */
+.capcalera {
+  position: relative;
+  height: 38vh; 
+  overflow: hidden;
+}
+
+.capcalera img {
+    width: 100%;
+    height: 100%;
+    display: block; 
+    object-fit: cover; 
+}
+
+.text-sobre-imatge {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  color: white;
+  background-color: rgba(110, 106, 106, 0.5);
+}
+
+/* 👥 Sobre nosaltres */
+.sobre-nosaltres {
+  padding: 40px 20px;
+  text-align: left;  
+  max-width: 100%;
+}
+
+.fila-nosaltres {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Cada bloc imatge+text */
+.contenidor-nosaltres {
+ display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  gap: 20px;
+  margin: 20px;
+}
+
+/* Alterna la direcció per la segona fila */
+.contenidor-nosaltres:nth-child(2) {
+  flex-direction: row-reverse;
+}
+
+.img-ronda {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  flex-shrink: 0;
+}
+
+/* 🍽️ Carta amb grid */
+.carta {
+  padding: 40px 20px;
+  text-align: left;  
+  max-width: 100%;
+}
+
+.menu-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: 150px 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  align-items: stretch;
+}
+
+/* Títol de cada menú */
+.menu-left {
+  grid-row: 1 / span 2;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  padding: 1rem;
+  height: 100%;
+}
+
+/* Contingut ocupa dues columnes a la primera fila */
+.contingut {
+  grid-column: 2 / span 2;
+}
+
+/* Imatges ocupen la segona fila, columnes 2 i 3 */
+.img-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.img-container span {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 0.3rem 0.6rem;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+
+/* 🖼️ Galeria amb flex */
+.galeria-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1%;
+  max-width: 1000px; /* o el que s’ajusti al teu disseny */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estil general per totes les imatges */
+.galeria-container img {
+  width: 24%;  /* 4 per fila amb petit marge */
+  border: 4px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Hover (quan passes per sobre) */
+.galeria-container img:hover {
+  border-color: #000;
+  filter: brightness(70%);
+  cursor: pointer;
+}
+
+/* Imatges fosques per defecte: 1, 4, 5, 8 */
+.galeria-container img:nth-child(1),
+.galeria-container img:nth-child(4),
+.galeria-container img:nth-child(5),
+.galeria-container img:nth-child(8) {
+  filter: brightness(80%);
+}
+
+/* Responsive: quan el navegador és estret, les imatges es col·loquen verticalment i centrades */
+@media (max-width: 900px) {
+  .galeria-container img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* 📅 Formulari */
+.reserva form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 700px;
+  margin: auto;
+  padding: 1rem;
+}
+
+.reserva h2 {
+  text-align: left;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+.reserva input,
+.reserva textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+
+/* Fer que textarea ocupi les dues columnes */
+.reserva textarea {
+  grid-column: 1 / -1;
+  min-height: 100px;
+}
+
+/* Fer que el botó estigui alineat a la dreta i ocupi tota la fila */
+.reserva button {
+  grid-column: 2 / 3;
+  justify-self: end;
+  padding: 0.5rem 1rem;
+  border: 1px solid #333;
+  background-color: white;
+  cursor: pointer;
+}
+
+.reserva button:hover {
+  background-color: #eee;
+}
+
+/* 📍 Botó reserva fix */
+.boto-reserva {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+  border-radius: 8px;
+}
+.boto-reserva:hover {
+  text-decoration: underline;
+  background-color: #646060;
+}
+
+/* 👣 Footer */
+.footer {
+  background-color: #e7bf8b;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo img {
+  max-height: 50px;
+}
+
+.footer-contacte {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.material-icons {
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
