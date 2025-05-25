@@ -37,7 +37,7 @@ body {
 /* 🖼️ Capçalera */
 .capcalera {
   position: relative;
-  height: 38vh; 
+  height: 52vh;
   overflow: hidden;
 }
 
@@ -216,6 +216,54 @@ body {
     max-width: 300px;
   }
 }
+/* Exercici 3 – Vídeo responsive centrat */
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.video-container video {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+/* Exercici 4 – Controls personalitzats per vídeo */
+.video-wrapper {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.video-wrapper video {
+  width: 100%;
+  display: block;
+}
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.controls .material-icons {
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.controls .material-icons:hover {
+  box-shadow: 0 0 10px white;
+}
 
 /* 📅 Formulari */
 .reserva form {
@@ -263,6 +311,7 @@ body {
 }
 
 /* 📍 Botó reserva fix */
+/* Exercici 1.2 – Transició en el botó de reserva amb background, transform i color */
 .boto-reserva {
   position: fixed;
   bottom: 1rem;
@@ -272,10 +321,13 @@ body {
   padding: 1rem;
   text-decoration: none;
   border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
 }
 .boto-reserva:hover {
   text-decoration: underline;
-  background-color: #646060;
+  background-color: #555;
+  transform: scale(1.05);
+  color: #ffd700;
 }
 
 /* 👣 Footer */
@@ -302,6 +354,37 @@ body {
 .material-icons {
   vertical-align: middle;
   margin-right: 0.5rem;
+}
+/* Transició hover galeria - escala, rotació i escala de grisos */
+.galeria-container img {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.galeria-container img:hover {
+  transform: scale(1.1) rotate(3deg);
+  filter: grayscale(100%) brightness(70%);
+}
+/* Exercici 2.1 – Animació text capçalera */
+@keyframes aparicioCapcalera {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    color: orange;
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(10px);
+    color: orange;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    color: white;
+  }
+}
+
+.text-sobre-imatge {
+  animation: aparicioCapcalera 2s ease-out forwards;
 }
 
 /* 🔧 Adaptació per mòbils (≤576px) */
@@ -350,6 +433,34 @@ body {
     width: 100%;
     justify-content: center;
   }
+  /* Exercici 2.2 – Animació menú-left amb 4 frames i 3 propietats */
+@keyframes bounceColors {
+  0% {
+    background-color: #f8f8f8;
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  25% {
+    background-color: #ffd700;
+    transform: translateY(-5px);
+    opacity: 0.8;
+  }
+  75% {
+    background-color: #ffb347;
+    transform: translateY(5px);
+    opacity: 1;
+  }
+  100% {
+    background-color: #f8f8f8;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.menu-left {
+  animation: bounceColors 3s infinite;
+}
+
 
   .contingut {
     grid-column: auto;
