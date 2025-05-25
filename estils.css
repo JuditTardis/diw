@@ -14,14 +14,23 @@ body {
   width: 100%;
   display: flex;
   background-color: rgb(1, 1, 1);
-  justify-content: right;
+  justify-content: flex-end; /* "right" no és vàlid en flexbox, millor "flex-end" */
   z-index: 1000;
+  padding: 0.9rem 3rem; /* padding per defecte */
+  transition: padding 0.3s ease, background-color 0.3s ease;
+}
+
+.menu-principal.shrink {
+  padding: 0.3rem 1rem;
+  background-color: #111;
 }
 
 .menu-principal ul {
   display: flex;
   gap: 2rem;
   list-style: none;
+  margin: 0; /* recomanable per evitar marges inesperats */
+  padding: 0;
 }
 
 .menu-principal a {
@@ -33,7 +42,6 @@ body {
 .menu-principal a:hover {
   text-decoration: underline;
 }
-
 /* 🖼️ Capçalera */
 .capcalera {
   position: relative;
@@ -276,10 +284,9 @@ body {
 }
 
 .reserva h2 {
-  text-align: left;
-  max-width: 700px;
-  margin: auto;
-  margin-bottom: 1rem;
+  padding: 40px 20px;
+  text-align: left;  
+  max-width: 100%;
 }
 
 .reserva input,
@@ -368,12 +375,12 @@ body {
 @keyframes aparicioCapcalera {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(60px);
     color: orange;
   }
   50% {
     opacity: 0.5;
-    transform: translateY(10px);
+    transform: translateY(30px);
     color: orange;
   }
   100% {

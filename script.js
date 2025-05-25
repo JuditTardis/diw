@@ -9,10 +9,8 @@ document.getElementById("mute").onclick = () => video.muted = true;
 window.onscroll = function () {
   const menu = document.querySelector(".menu-principal");
   if (window.scrollY > 100) {
-    menu.style.padding = "0.3rem 1rem";
-    menu.style.backgroundColor = "#111";
+    menu.classList.add("shrink");
   } else {
-    menu.style.padding = "0.5rem 2rem";
-    menu.style.backgroundColor = "black";
+    menu.classList.remove("shrink");
   }
 };
